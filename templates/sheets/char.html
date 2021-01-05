@@ -1,0 +1,36 @@
+<form class="actor-sheet {{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64" />
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+    </header>
+    <div class="attributes flex-group-left">
+        <h3>{{localize "openlegend.common.attributes"}}</h3>
+        {{#each data.attributes as |attribute key|}}
+        <div class="attribute flexrow flex-group-center">
+            <label for="data.attributes.{{key}}.value" class="resource-label">{{attribute.label}}</label>
+            <input type="text" class="attribute-input" name="data.attributes.{{key}}.value" value="{{attribute.value}}"
+                data-dtype="Number" />
+            <button class="attribute-roll rollable" data-roll="{{attribute.value}}"
+                data-label="{{attribute.label}}">Roll {{attribute.label}}</button>
+        </div>
+        {{/each}}
+    </div>
+    </div>
+    <section class="items">
+        <h3>Owned Items</h3>
+        <ol class="actor-items">
+            {{#each actor.items as |item id|}}
+            <li class="actor-item" data-item-id="{{id}}">
+                <div class="item-name">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4>{{item.name}}</h4>
+                </div>
+                <div class="item-controls">
+                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                </div>
+            </li>
+            {{/each}}
+        </ol>
+    </section>
+</form>

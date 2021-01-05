@@ -1,0 +1,57 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <div>
+        <table>
+            <tr>
+                <th>{{localize "openlegend.spell.originalName"}}</th>
+                <th>{{localize "openlegend.spell.powerLevel"}}</th>
+                <th>{{localize "openlegend.spell.useAttribute"}}</th>
+                <th>{{localize "openlegend.spell.invocationTime"}}</th>
+                <th>{{localize "openlegend.spell.duration"}}</th>
+            </tr>
+            <tr>
+                <td>
+                    <input name="data.customName" type="text" value="{{data.customName}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <!-- @todo dialog to configure power levels -->
+                    <select name="data.power" data-dtype="Number">
+                        {{#select data.power}}
+                        {{#each config.powerLevels as |level|}}
+                        <option value="{{level}}">{{level}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </td>
+                <td>
+                    <!-- @todo need to handle the array of attributes -->
+                    <select name="data.attribute">
+                        {{#select data.attribute}}
+                        <option value=""></option>
+                        {{#each config.attributes as |name type|}}
+                        <option value="{{type}}">{{localize name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </td>
+                <td>
+                    <input name="data.invocationTime" type="text" value="{{data.invocationTime}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.duration" type="text" value="{{data.duration}}" data-dtype="String"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="description-effect">
+            <h2>{{localize "openlegend.description"}}</h2>
+            {{editor content=data.description target="data.description" button=true editable=true}}
+    </div>
+    <div class="description-effect">
+            <h2>{{localize "openlegend.ability.effect"}}</h2>
+            {{editor content=data.effect target="data.effect" button=true editable=true}}
+    </div>
+</form>

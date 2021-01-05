@@ -1,0 +1,140 @@
+{
+    "Actor": {
+        "types":["character", "npc"],
+        "templates":{
+            "common":{
+                "attributes":{
+                    "agility":{
+                        "value":0,
+                        "max":9
+                    },
+                    "fortitude":{
+                        "value":0,
+                        "max":9
+                    },
+                    "might":{
+                        "value":0,
+                        "max":9
+                    },
+                    "learning":{
+                        "value":0,
+                        "max":9
+                    },
+                    "logic":{
+                        "value":0,
+                        "max":9
+                    },
+                    "perception":{
+                        "value":0,
+                        "max":9
+                    },
+                    "will":{
+                        "value":0,
+                        "max":9
+                    },
+                    "deception":{
+                        "value":0,
+                        "max":9
+                    },
+                    "persuation":{
+                        "value":0,
+                        "max":9
+                    },
+                    "presence":{
+                        "value":0,
+                        "max":9
+                    },
+                    "alteration":{
+                        "value":0,
+                        "max":9
+                    },
+                    "creation":{
+                        "value":0,
+                        "max":9
+                    },
+                    "energy":{
+                        "value":0,
+                        "max":9
+                    },
+                    "entropy":{
+                        "value":0,
+                        "max":9
+                    },
+                    "influence":{
+                        "value":0,
+                        "max":9
+                    },
+                    "movement":{
+                        "value":0,
+                        "max":9
+                    },
+                    "prescience":{
+                        "value":0,
+                        "max":9
+                    },
+                    "protection":{
+                        "value":0,
+                        "max":9
+                    }
+                },
+                "health":{
+                    "hp":{
+                        "value":10,
+                        "max":10
+                    },
+                    "leathalDamage":0,
+                    "wounds": ""
+                },
+                "speed":{
+                    "base":30,
+                    "special":""
+                },
+                "defenses":{
+                   "toughness":10,
+                   "evasion":10,
+                   "resolve":10 
+                }
+            }    
+        },
+        "character":{
+            "templates":["common"]
+        },
+        "npc":{
+            "templates":["common"],
+            "type": "normal"
+        }
+    },
+    "Item":{
+        "types":[
+            "bane",
+            "boon"
+        ],
+        "templates":{
+            "ability":{
+                "tags":[""],
+                "effect":"",
+                "special":""
+            },
+            "spell":{
+                "templates":["ability"],
+                "originalName":"",
+                "power": 1,
+                "attribute": "agility",
+                "invocationTime": "",
+                "duration":""
+
+            }
+        },
+        "bane":{
+            "templates":["spell"],
+            "resistEnds": true,
+            "attack":[{
+                "attribute": "agility",
+                "defense": "guard"
+            }]
+        },
+        "boon":{
+            "templates":["spell"]
+        }
+    }
+}

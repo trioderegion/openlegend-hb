@@ -1,0 +1,27 @@
+{
+    "openlegend" :{
+        "attributes":{
+            "agility": "Agility",
+            "learning": "Learning",
+            "deception": "Deception",
+            "alteration": "Alteration"
+        },
+        "spell":{
+            "useAttribute": "Attribute",
+            "originalName": "Original Name",
+            "invocationTime": "Invocation Time",
+            "powerLevel": "Power Level",
+            "duration": "Duration"
+        },
+        "ability":{
+            "effect": "Effect"
+        },
+        "description": "Description",
+        "common":{
+            "attributes":"Attributes",
+            "boons": "Boons",
+            "banes": "Banes"
+        }
+
+    }
+}
