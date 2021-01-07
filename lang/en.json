@@ -1,27 +1,43 @@
 {
-    "openlegend" :{
-        "attributes":{
+    "openlegend": {
+        "attributes": {
             "agility": "Agility",
+            "fortitude": "Fortitude",
+            "might": "Might",
             "learning": "Learning",
+            "logic": "Logic",
+            "perception": "Perception",
+            "will": "Will",
             "deception": "Deception",
-            "alteration": "Alteration"
+            "persuasion": "Persuasion",
+            "presence": "Presence",
+            "alteration": "Alteration",
+            "creation": "Creation",
+            "energy": "Energy",
+            "entropy": "Entropy",
+            "influence": "Influence",
+            "movement": "Movement",
+            "prescience": "Prescience",
+            "protection": "Protection"
         },
-        "spell":{
+        "spell": {
             "useAttribute": "Attribute",
             "originalName": "Original Name",
             "invocationTime": "Invocation Time",
             "powerLevel": "Power Level",
             "duration": "Duration"
         },
-        "ability":{
+        "ability": {
             "effect": "Effect"
         },
         "description": "Description",
-        "common":{
-            "attributes":"Attributes",
+        "common": {
+            "attributes": "Attributes",
             "boons": "Boons",
-            "banes": "Banes"
+            "banes": "Banes",
+            "toughness": "Toughness",
+            "guard": "Guard",
+            "resolve": "Resolve"
         }
-
     }
 }

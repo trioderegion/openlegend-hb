@@ -1,19 +1,72 @@
 <form class="actor-sheet {{cssClass}}" autocomplete="off">
+    {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64" />
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
-    </header>
-    <div class="attributes flex-group-left">
-        <h3>{{localize "openlegend.common.attributes"}}</h3>
-        {{#each data.attributes as |attribute key|}}
-        <div class="attribute flexrow flex-group-center">
-            <label for="data.attributes.{{key}}.value" class="resource-label">{{attribute.label}}</label>
-            <input type="text" class="attribute-input" name="data.attributes.{{key}}.value" value="{{attribute.value}}"
-                data-dtype="Number" />
-            <button class="attribute-roll rollable" data-roll="{{attribute.value}}"
-                data-label="{{attribute.label}}">Roll {{attribute.label}}</button>
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <div class="header-fields">
+            <div class="header-details flexrow">
+                <h4 class="charname">Name<input name="name" class="" type="text" value="{{actor.name}}" size="5"
+                        placeholder="Name" /></h4>
+                <h4 class="chararchetype">Archetype<input name="data.archetype" type="text" value="{{data.archetype}}"
+                        size="5" placeholder="Archetype" /></h4>
+            </div>
+            <div class="header-details flexrow">
+                <h4 class="playername">Player<input name="data.player" type="text" value="{{data.player}}" size="5"
+                        placeholder="Player" /></h4>
+                <h4 class="level">Level<input name="data.level" type="text" value="{{data.level}}" size="3"
+                        placeholder="level" /></h4>
+                <h4 class="xp">XP<input name="data.xp" type="text" value="{{data.xp}}" size="3" placeholder="xp" /></h4>
+            </div>
+            <div class="header-details flexrow">
+                <h4 class="description">Description<input name="data.description" type="text"
+                        value="{{data.description}}" placeholder="Description" /></h4>
+            </div>
+
+
         </div>
-        {{/each}}
+    </header>
+    <div class="attributes flexrow">
+        <div class="attributes flexcol">
+            <h3>{{localize "openlegend.common.attributes"}}</h3><br>
+            {{#each data.attributes as |attribute key|}}
+            <div class="attribute flexrow flex-group-center">
+                <button class="attribute-roll rollable" data-roll="{{attribute.value}}"
+                    data-label="{{attribute.label}}">{{localize attribute.label}}</button>
+                <input type="text" class="attribute-input" name="data.attributes.{{key}}.value"
+                    value="{{attribute.value}}" data-dtype="Number" />
+                <input type="text" value="Die placeholder"></input>
+                <input type="text" value="Cost placeholder"></input>
+            </div>
+            {{/each}}
+        </div>
+        <div class="attribute-hpdef flexrow">
+            <div class="defenses">
+                <span>{{localize "openlegend.common.guard"}}: {{defenses.guard.value}}<br>{{localize
+                    "openlegend.common.toughness"}}: {{defenses.toughness.value}}<br>{{localize
+                    "openlegend.common.resolve"}}: {{defenses.resolve.value}}</span>
+            </div>
+
+            <div class="attributes">
+                <h3>Hit Points</h3>
+                <span>
+                    <div class="health-label">Current / Max</div>
+                </span>
+                <span class="health"><input type="text" class="health" name="data.health.hp.value"
+                        value="{{data.health.hp.value}}" data-dtype="Number" /> / {{data.health.hp.max}}</span>
+
+                <div>
+                    Legend Points <input type="text" class="legendpoints" name="data.legendpoints"
+                        value="{{data.legendpoints}}" data-dtype="Number" />
+                </div>
+                <div>
+                    Speed <input type="text" class="speed" name="data.speed.base" value="{{data.speed.base}}"
+                        data-dtype="Number" />
+                </div>
+                <div>
+                    Wealth Level <input type="text" class="wealthLevel" name="data.wealthLevel"
+                        value="{{data.wealthLevel}}" data-dtype="Number" />
+                </div>
+            </div>
+        </div>
     </div>
     </div>
     <section class="items">
