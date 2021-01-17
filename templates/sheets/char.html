@@ -24,66 +24,62 @@
 
         </div>
     </header>
-    <div class="attributes flexrow">
-        <div class="attributes flexcol">
-            <h3>{{localize "openlegend.common.attributes"}}</h3><br>
+    <div class="stats flexrow">
+        <div class="stats attribute-list flexcol">
+            <h3>{{localize "openlegend.common.attributes"}}</h3>
             {{#each data.attributes as |attribute key|}}
             <div class="attribute flexrow flex-group-center">
-                <button class="attribute-roll rollable" data-roll="{{attribute.value}}"
+                <button class="attribute-roll rollable" data-score="{{attribute.value}}" data-attribute="{{key}}"
                     data-label="{{attribute.label}}">{{localize attribute.label}}</button>
                 <input type="text" class="attribute-input" name="data.attributes.{{key}}.value"
                     value="{{attribute.value}}" data-dtype="Number" />
-                <input type="text" value="Die placeholder"></input>
-                <input type="text" value="Cost placeholder"></input>
+                <input type="text" class="attribute-input" value="XdYZ"></input>
+                <input type="text" class="attribute-input" value="XY"></input>
             </div>
             {{/each}}
         </div>
-        <div class="attribute-hpdef flexrow">
-            <div class="defenses">
-                <span>{{localize "openlegend.common.guard"}}: {{defenses.guard.value}}<br>{{localize
-                    "openlegend.common.toughness"}}: {{defenses.toughness.value}}<br>{{localize
-                    "openlegend.common.resolve"}}: {{defenses.resolve.value}}</span>
+        <div class="stats flexcol">
+            <div class="stats defenses-health flexrow">
+                <div class="stats defenses-health flexcol">
+                    <h3>{{localize "openlegend.common.defenses"}}</h3>
+                    <div>{{localize "openlegend.common.guard"}}: {{defenses.guard.value}}</div>
+                    <div>{{localize "openlegend.common.toughness"}}: {{defenses.toughness.value}}</div>
+                    <div>{{localize "openlegend.common.resolve"}}: {{defenses.resolve.value}}</div>
+                </div>
+                <div class="stats defenses-health flexcol">
+                    <h3>{{localize "openlegend.common.status"}}</h3>
+                    <div>
+                        {{localize "openlegend.health.hitpoints"}}: <input name="data.health.hp.value" type="text"
+                            class="attribute-input" value="{{data.health.hp.value}}" data-dtype="Number"> /
+                        {{data.health.hp.max}}
+                    </div>
+                    <div>
+                        {{localize "openlegend.common.speed"}} <input name="data.speed.base" type="text" class="attribute-input"
+                            value="{{data.speed.base}}" data-dtype="Number" />
+                    </div>
+                    <div>
+                        <!-- TODO -->
+                        {{localize "openlegend.common.legendPoints"}}<input name="" type="text" class="attribute-input"
+                            value="{{legendPoints}}" data-dtype="Number">
+                    </div>
+                    <div>
+                        <!-- TODO -->
+                        {{localize "openlegend.common.wealthLevel"}}<input name="" type="text" class="attribute-input"
+                            value="{{wealthLevel}}" data-dtype="Number">
+                    </div>
+                </div>
             </div>
-
-            <div class="attributes">
-                <h3>Hit Points</h3>
-                <span>
-                    <div class="health-label">Current / Max</div>
-                </span>
-                <span class="health"><input type="text" class="health" name="data.health.hp.value"
-                        value="{{data.health.hp.value}}" data-dtype="Number" /> / {{data.health.hp.max}}</span>
-
-                <div>
-                    Legend Points <input type="text" class="legendpoints" name="data.legendpoints"
-                        value="{{data.legendpoints}}" data-dtype="Number" />
-                </div>
-                <div>
-                    Speed <input type="text" class="speed" name="data.speed.base" value="{{data.speed.base}}"
-                        data-dtype="Number" />
-                </div>
-                <div>
-                    Wealth Level <input type="text" class="wealthLevel" name="data.wealthLevel"
-                        value="{{data.wealthLevel}}" data-dtype="Number" />
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <section class="items">
-        <h3>Owned Items</h3>
-        <ol class="actor-items">
-            {{#each actor.items as |item id|}}
-            <li class="actor-item" data-item-id="{{id}}">
-                <div class="item-name">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                    <h4>{{item.name}}</h4>
-                </div>
-                <div class="item-controls">
+            <div class="items flexcol">
+                <h3>Owned Items</h3>
+                {{#each actor.items as |item id|}}
+                <div class="item-entry" data-item-id="{{id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30" />
+                    <strong>{{item.name}}</strong>
                     <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                     <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
                 </div>
-            </li>
-            {{/each}}
-        </ol>
-    </section>
+                {{/each}}
+            </div>
+        </div>
+    </div>
 </form>

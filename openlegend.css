@@ -10,47 +10,55 @@ openlegend.sheet.item .description-effect {
 openlegend.sheet.item .description-effect .editor {
   height: 100%;
 }
-openlegend.sheet.char form {
+openlegend.sheet.item .power-level-selection table {
+  margin-left: auto;
+  margin-right: auto;
+}
+.openlegend.sheet.char form {
   display: flex;
   flex-direction: column;
 }
-openlegend.sheet.char .defenses {
-  margin-left: auto;
-  margin-right: auto;
-  width: 8em;
-}
-openlegend.sheet.char .sheet-header h4 {
+.openlegend.sheet.char .sheet-header h4 {
   padding: 0px;
   border-bottom: 0;
   font-size: 14px;
 }
-openlegend.sheet.char .attributes .attribute {
+.openlegend.sheet.char .stats {
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+.openlegend.sheet.char .stats input {
+  width: 4ch;
+}
+.openlegend.sheet.char .stats .attribute-list {
+  flex: none;
+}
+.openlegend.sheet.char .stats .attribute-list .attribute {
   border: 1px solid #AAA;
-  max-width: 355px;
+  max-width: 300px;
 }
-openlegend.sheet.char .attributes .resource-label {
-  padding-top: 10px;
-  padding-left: 1px;
-  min-width: 70px;
-  max-width: 100px;
+.openlegend.sheet.char .stats .attribute-list .attribute .attribute-roll button {
+  width: 15ch;
 }
-openlegend.sheet.char .attributes .attribute-input {
-  margin-top: 1px;
-  min-height: 35px;
-  min-width: 20px;
-  max-width: 80px;
+.openlegend.sheet.char .stats .defenses-health {
+  flex: 0 0 auto;
+  justify-content: space-evenly;
+  padding: 10px;
 }
-openlegend.sheet.char .attributes .attribute-roll {
-  min-width: 130px;
-  max-width: 175px;
+.openlegend.sheet.char .stats .defenses-health h3 {
+  text-align: center;
 }
-openlegend.sheet.char .attributes .health-label {
-  white-space: nowrap;
+.openlegend.sheet.char .stats .attribute-input {
+  flex: 0 0 4ch;
 }
-openlegend.sheet.char .attributes .health {
-  max-width: 50px;
-  font-size: 16px;
+.openlegend.sheet.char .items {
+  padding: 10px;
 }
-openlegend.sheet.char .attributes .attribute-hpdef {
-  max-height: 200px;
+.openlegend.sheet.char .items h3 {
+  text-align: center;
+  align-self: center;
+  max-height: 20px;
+}
+.openlegend.sheet.char .items .item-entry {
+  max-height: 32px;
 }

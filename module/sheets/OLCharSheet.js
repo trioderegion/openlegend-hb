@@ -36,9 +36,28 @@ export default class OLCharSheet extends ActorSheet {
         }
         
         // @todo placeholders
-        data.legendpoints = 0;
+        data.legendPoints = 0;
         data.wealthLevel = 0;
 
         return data;
+    }
+    
+     /** @override */
+	async activateListeners(html) {
+        super.activateListeners(html);
+        
+        /** owner only listeners */
+        if( this.actor.owner){
+            html.find(".attribute-roll").click(this.onAttributeRoll.bind(this));
+        }
+    }
+
+    /** Listeners */
+    onAttributeRoll(event){
+        const {score, attribute, label} = event.currentTarget.dataset;
+       
+        ChatMessage.create({
+            content: `${game.i18n.format(label)} (${attribute}) was rolled with a score of ${score}.`
+        })
     }
 }

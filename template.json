@@ -118,7 +118,7 @@
             "spell":{
                 "templates":["ability"],
                 "originalName":"",
-                "power": 1,
+                "power": [],
                 "attribute": "agility",
                 "invocationTime": "",
                 "duration":""

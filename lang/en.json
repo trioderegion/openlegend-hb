@@ -37,7 +37,17 @@
             "banes": "Banes",
             "toughness": "Toughness",
             "guard": "Guard",
-            "resolve": "Resolve"
+            "resolve": "Resolve",
+            "current": "Current",
+            "max": "Max",
+            "defenses": "Defenses",
+            "status": "Status",
+            "speed": "Speed",
+            "legendPoints": "Legend Points",
+            "wealthLevel": "Wealth Level"
+        },
+        "health":{
+            "hitpoints": "Hit Points"
         }
     }
 }
