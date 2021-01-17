@@ -54,8 +54,8 @@
                         {{data.health.hp.max}}
                     </div>
                     <div>
-                        {{localize "openlegend.common.speed"}} <input name="data.speed.base" type="text" class="attribute-input"
-                            value="{{data.speed.base}}" data-dtype="Number" />
+                        {{localize "openlegend.common.speed"}} <input name="data.speed.base" type="text"
+                            class="attribute-input" value="{{data.speed.base}}" data-dtype="Number" />
                     </div>
                     <div>
                         <!-- TODO -->
@@ -72,11 +72,15 @@
             <div class="items flexcol">
                 <h3>Owned Items</h3>
                 {{#each actor.items as |item id|}}
-                <div class="item-entry" data-item-id="{{id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30" />
-                    <strong>{{item.name}}</strong>
-                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                <div class="item-entry flexrow rollable" data-item-id="{{id}}">
+                    <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+                    <div class="item-name">
+                        <strong>{{item.name}}</strong>
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
                 </div>
                 {{/each}}
             </div>

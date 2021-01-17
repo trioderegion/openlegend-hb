@@ -54,12 +54,28 @@
   .items {
     padding: 10px;
 
+    .item-entry{
+      align-items: center;
+    } 
+
+    .item-image {
+      flex: 0 0 30px;
+      height: 30px;
+      background-size: 30px;
+      border: none;
+      margin-right: 5px;
+    }
+
+    .item-image:hover {
+      background-image: url("../../icons/svg/d20-black.svg") !important;
+    }
+
     h3 {
       text-align: center;
       align-self: center;
       max-height: 20px;
     }
-    
+
     .item-entry {
       max-height: 32px;
     }

@@ -2,7 +2,7 @@ export default class OLCharSheet extends ActorSheet {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            template: "systems/openlegend-hb/templates/sheets/char.html",
+            template: "systems/openlegend-hb/templates/sheets/char.hbs",
             classes: ["openlegend", "sheet", "char"]
         });
     }
@@ -59,5 +59,7 @@ export default class OLCharSheet extends ActorSheet {
         ChatMessage.create({
             content: `${game.i18n.format(label)} (${attribute}) was rolled with a score of ${score}.`
         })
+        
+        game.openlegend.dice.actionRoll(score);
     }
 }

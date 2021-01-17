@@ -54,6 +54,19 @@ openlegend.sheet.item .power-level-selection table {
 .openlegend.sheet.char .items {
   padding: 10px;
 }
+.openlegend.sheet.char .items .item-entry {
+  align-items: center;
+}
+.openlegend.sheet.char .items .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.openlegend.sheet.char .items .item-image:hover {
+  background-image: url("../../icons/svg/d20-black.svg") !important;
+}
 .openlegend.sheet.char .items h3 {
   text-align: center;
   align-self: center;

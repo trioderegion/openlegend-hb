@@ -29,4 +29,56 @@ openlegend.defense = {
     resolve: "openlegend.common.resolve"
 }
 
-openlegend.powerLevels = Array.from({length: 9}, (_, i) => i + 1);
+openlegend.powerLevels = Array.from({
+    length: 9
+}, (_, i) => i + 1);
+
+/** dice information */
+openlegend.dice = {
+    core: {
+        num: 1,
+        size: 20
+    },
+    score: {
+        0: {
+            num: 0,
+            size: 0
+        },
+        1: {
+            num: 1,
+            size: 4
+        },
+        2: {
+            num: 1,
+            size: 6
+        },
+        3: {
+            num: 1,
+            size: 8
+        },
+        4: {
+            num: 1,
+            size: 10
+        },
+        5: {
+            num: 2,
+            size: 6
+        },
+        6: {
+            num: 2,
+            size: 8
+        },
+        7: {
+            num: 2,
+            size: 10
+        },
+        8: {
+            num: 2,
+            size: 8
+        },
+        9: {
+            num: 2,
+            size: 10
+        }
+    }
+}

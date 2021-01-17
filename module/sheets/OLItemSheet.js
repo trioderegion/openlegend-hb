@@ -14,7 +14,7 @@ export default class OLItemSheet extends ItemSheet {
         })
     }
     get template(){
-        return `systems/openlegend-hb/templates/sheets/${this.item.data.type}.html`;
+        return `systems/openlegend-hb/templates/sheets/${this.item.data.type}.hbs`;
     }
     
     getData() {
