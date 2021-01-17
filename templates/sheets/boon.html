@@ -48,9 +48,9 @@
                             {{/each}}
                         </tr>
                         <tr>
-                            {{#each config.powerLevels as |level|}}
+                            {{#each config.powerLevels as |level index|}}
                             <td>
-                                <input type="checkbox" class="pl-select" value={{level}} data-target="data.power" {{checked (ifIn level ../data.power)}}></input>
+                                <input type="checkbox" name="data.power" data-dtype="Boolean" value="{{lookup ../data.power @index}}" data-target="data.power" {{checked (lookup ../data.power @index)}}></input>
                             </td>
                             {{/each}}
                         </tr>
