@@ -3,4 +3,4 @@
 *.orig
 *.code-workspace
 node_modules
-.vs_code
+.vscode
