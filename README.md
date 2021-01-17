@@ -7,4 +7,4 @@ This product was created under the Open Legend Community License and contains ma
 
 The full-text Open Legend Community License can be found at http://www.openlegendrpg.com/community-license.
 
-![Open Legend License](https://openlegendrpg.com/assets/img/open_legend_licensed_logo_gold.png)
+![Open Legend License](https://openlegendrpg.com/assets/img/open_legend_licensed_logo_silver.png)
