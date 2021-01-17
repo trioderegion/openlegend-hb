@@ -34,30 +34,31 @@
                 </td>
             </tr>
         </table>
-        <div class="power-level-selection">
-        <table>
-            <tr>
-                <td>
-                    {{localize "openlegend.spell.powerLevel"}}
-                </td>
-                <td>
-                    <table>
-                        <tr>
-                            {{#each config.powerLevels as |level|}}
-                            <td>{{level}}</td>
-                            {{/each}}
-                        </tr>
-                        <tr>
-                            {{#each config.powerLevels as |level index|}}
-                            <td>
-                                <input type="checkbox" name="data.power" data-dtype="Boolean"  data-target="data.power" {{checked (lookup ../data.power @index)}}></input>
-                            </td>
-                            {{/each}}
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+        <div>
+            <table class="power-level-selection">
+                <tr>
+                    <td>
+                        {{localize "openlegend.spell.powerLevel"}}
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                {{#each config.powerLevels as |level|}}
+                                <td>{{level}}</td>
+                                {{/each}}
+                            </tr>
+                            <tr>
+                                {{#each config.powerLevels as |level index|}}
+                                <td>
+                                    <input type="checkbox" name="data.power" data-dtype="Boolean"
+                                        data-target="data.power" {{checked (lookup ../data.power @index)}}></input>
+                                </td>
+                                {{/each}}
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
     <div class="description-effect">

@@ -10,9 +10,8 @@ openlegend.sheet.item .description-effect {
 openlegend.sheet.item .description-effect .editor {
   height: 100%;
 }
-openlegend.sheet.item .power-level-selection table {
-  margin-left: auto;
-  margin-right: auto;
+openlegend.sheet.item .power-level-selection td {
+  text-align: center;
 }
 .openlegend.sheet.char form {
   display: flex;
@@ -27,11 +26,8 @@ openlegend.sheet.item .power-level-selection table {
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-.openlegend.sheet.char .stats input {
-  width: 4ch;
-}
 .openlegend.sheet.char .stats .attribute-list {
-  flex: none;
+  flex: 0 0 200px;
 }
 .openlegend.sheet.char .stats .attribute-list .attribute {
   border: 1px solid #AAA;
@@ -49,7 +45,8 @@ openlegend.sheet.item .power-level-selection table {
   text-align: center;
 }
 .openlegend.sheet.char .stats .attribute-input {
-  flex: 0 0 4ch;
+  flex: 0 0 5ch;
+  width: 5ch;
 }
 .openlegend.sheet.char .items {
   padding: 10px;

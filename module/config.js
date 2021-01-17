@@ -35,14 +35,10 @@ openlegend.powerLevels = Array.from({
 
 /** dice information */
 openlegend.dice = {
-    core: {
-        num: 1,
-        size: 20
-    },
     score: {
         0: {
-            num: 0,
-            size: 0
+            num: 1,
+            size: 20
         },
         1: {
             num: 1,

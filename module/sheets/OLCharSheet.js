@@ -20,6 +20,10 @@ export default class OLCharSheet extends ActorSheet {
 
             /** Ability Score localization keys */
             abl.label = data.config.attributes[a];
+            
+            /** die expression */
+            const {num, size} = data.config.dice.score[abl.value]
+            abl.die = abl.value > 0 ? `${num}d${size}` : "-";
         }
         
         // @todo guard: include armor and feats and other bonuses
@@ -60,6 +64,6 @@ export default class OLCharSheet extends ActorSheet {
             content: `${game.i18n.format(label)} (${attribute}) was rolled with a score of ${score}.`
         })
         
-        game.openlegend.dice.actionRoll(score);
+        game.openlegend.dice.ActionRoll(score);
     }
 }
