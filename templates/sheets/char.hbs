@@ -71,9 +71,9 @@
             </div>
             <div class="items flexcol">
                 <h3>Owned Items</h3>
-                {{#each actor.items as |item id|}}
-                <div class="item-entry flexrow rollable" data-item-id="{{id}}">
-                    <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+                {{#each actor.items as |item index|}}
+                <div class="item-entry flexrow" data-itemid="{{item._id}}">
+                    <div class="item-image item-roll" style="background-image: url('{{item.img}}')"></div>
                     <div class="item-name">
                         <strong>{{item.name}}</strong>
                     </div>

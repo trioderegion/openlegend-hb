@@ -61,7 +61,8 @@ export async function ActionRoll(score = 0, advantage = 0) {
         return `${prev}+${curr}`
     });
 
-    const roll = new Roll(finalExpression).roll();
+    const roll = new Roll(finalExpression);
 
-    roll.toMessage();
+    /** return the promise of a new roll */
+    return roll;
 }
